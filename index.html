@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>AugDog</title>
+        <!-- <input type="file" accept="image/*" capture="camera" /> -->
+        <meta name="viewport" content="width=device-width">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/css/materialize.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        
+        <link rel="icon" href="./images/paw.png">
+
+        <!-- Material Design Theming For Firebase Samples.-->
+        <!-- <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.orange-indigo.min.css"> -->
+        <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <link href="https://fonts.googleapis.com/css?family=Exo+2:200" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lato:100|Major+Mono+Display" rel="stylesheet">
+        <script defer src="https://code.getmdl.io/1.1.3/material.min.js"></script>
+       
+        <!-- Adam CSS -->
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <link rel="stylesheet" type="text/css" href="./css/particles.css">
+
+
+        <!-- intitialize firebase -->
+        <script src="https://www.gstatic.com/firebasejs/5.8.3/firebase.js"></script>
+        <script>
+          // Initialize Firebase
+          var config = {
+            apiKey: "AIzaSyB50TARrBpap02qpfQWSRR3UvO6CF1EIp4",
+            authDomain: "augdog-61243.firebaseapp.com",
+            databaseURL: "https://augdog-61243.firebaseio.com",
+            projectId: "augdog-61243",
+            storageBucket: "augdog-61243.appspot.com",
+            messagingSenderId: "644456462980"
+          };
+          firebase.initializeApp(config);
+        </script>
+    </head>
+    <body>
+        <!-- particles.js needs a local server. going to avoid this for now. -->
+        <!-- <div id="particles-js" style="height: 100%; width: 100%;"></div> -->
+        <nav>
+            <div class="nav-wrapper blue-grey lighten-4">
+                <h6 href="#!" class="brand-logo exo" style="margin-left: 60px; font-size: 24px; margin-top: 17px;">AugDog</h6>
+                <img style="height: 100%; width: auto;" src="./images/whitepaw.png">
+                <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+                <ul class="right hide-on-med-and-down">
+                <!-- <li><a href="sass.html">Sass</a></li>
+                <li><a href="badges.html">Components</a></li> -->
+                <li><a id="AboutButton" class="unselectable exo">About</a></li>
+                <li><a id="DogmentButton" class="unselectable exo">Dogment</a></li>
+                <li><a id="PupProfileButton" class="unselectable exo">Pup Profile</a></li>
+                <li><a id="ContactButton" class="unselectable exo">Contact</a></li>
+                <li> <button data-target="modal1" class="btn modal-trigger unselectable white grey-text 
+                        lighten-4 exo" id="signUpButtonNav">Sign up</button></li>
+                <li> <a data-target="modal1" class="modal-trigger unselectable blue-grey
+                    lighten-4 exo" style="margin-left: 10px; margin-right: 10px;" id="signInButtonNav">Sign in</a></li>
+                </ul>
+            </div>
+        </nav>
+        
+        <!-- Slideout NavBar -->
+        <ul class="sidenav" id="mobile-demo">
+            <!-- <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li> -->
+            <br>
+            <li> <a data-target="modal1" class="modal-trigger unselectable white grey-text
+                lighten-4 exo" id="signInButtonSideNav" style="margin-right: 50px;">Sign in</a></li>
+            <li> <button data-target="modal1" class="btn modal-trigger unselectable blue-grey
+                    lighten-4 exo" id="signUpButtonSideNav" style="margin-right: 50px;">Sign up</button></li>
+            <li><a id="AboutButtonTwo" class="unselectable exo">About</a></li>
+            <li><a id="DogmentButtonTwo" class="unselectable exo">Dogment</a></li>
+            <li><a id="PupProfileButtonTwo" class="unselectable exo">Pup Profile</a></li>
+            <li><a id="ContactButtonTwo" class="unselectable exo">Contact</a></li>
+
+        </ul>
+
+        <div class="container maincontainer">
+            <!--  About Page  -->
+            <div id="AboutPage" class="col s10 offset-s1">
+            
+                <br><br><br>
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                            <h6 class="exo centertext" style="font-size: 46px; color: rgb(36, 36, 36);">Augmented Reality</h6>
+                            <h6 class="exo centertext" style="font-size: 46px; color: rgb(36, 36, 36);">For Your Dog</h6>
+                            <br><br><br>
+                            <h6 class="centertext exo" style="font-size: 26px; color: rgb(87, 87, 87);">Immerse your dog in a virtual world, then share it with your friends! </h6>
+                    </div>
+                </div>
+
+                <!-- <div class="row">
+                    <div class="col s10 offset-s1">
+                        <div style="padding:56.25% 0 0 0;position:relative;">
+                            <iframe src="https://player.vimeo.com/video/319603065?api=1&autoplay=1&loop=1&sidedock=0&background=1&mute=0" 
+                            style="position:absolute;top:0;left:0;width:100%;height:100%;" id="vimeoPlayer" allow="autoplay"
+                            frameborder="0" webkitallowfullscreen mozallowfullscreen 
+                            allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col s10 offset-s1">
+                        <img src="./images/pup pics/AugDogPhoto.jpg" alt="augdogphoto" height="auto" width="100%">
+                    </div>
+                </div> -->
+            </div>
+
+            <!--  Dogment Page  -->    
+            <div id="DogmentPage" class="col s12 offset-s1">
+                <br>
+                <h5 class="exo">Augmented Reality Library:</h5>
+                <br>
+
+                <h7 class="exo" style="font-size: 15px; color: rgb(129, 129, 129);">Pick which experiences and environments you want to immerse you dog into! 
+                    These will be availiable for you on the AugDog App.</h7>
+                <br>
+                <br>
+
+                <div class="col s12 m7">
+                    <!-- <h2 class="header">Whales</h2> -->
+                    <div class="card horizontal">
+                        <div class="card-image">
+                        <img src="./images/whale.png" style="height: 100px; width: 100px; margin: 20px;">
+                        </div>
+                        <div class="card-stacked">
+                        <div class="card-content">
+                            <p class="exo" style="margin: 24px; font-size: 14px;">Whale Augmented Reality Experience</p>
+                        </div>
+                        <div class="card-action">
+                                <form action="#">
+                                    <p>
+                                        <label>
+                                        <input class="DogmentWhales" type="checkbox" />
+                                        <span class="exo">Favorite</span>
+                                        </label>
+                                    </p>
+                                </form>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card horizontal">
+                    <div class="card-image">
+                    <img src="./images/zombie.png" style="height: 100px; width: 55px; margin: 10px; 
+                        margin-right: 40px; margin-top: 30px; margin-left: 60px;">
+                    </div>
+                    <div class="card-stacked">
+                    <div class="card-content">
+                        <p class="exo" style="margin: 24px; font-size: 14px;">Zombie Augmented Reality Experience</p>
+                    </div>
+                    <div class="card-action">
+                            <form action="#">
+                                <p>
+                                    <label>
+                                    <input class="DogmentZombies" type="checkbox" />
+                                    <span class="exo">Favorite</span>
+                                    </label>
+                                </p>
+                            </form>
+                    </div>
+                    </div>
+                </div>
+
+                <br>
+                <br>
+                <button class="dogmentedRealitiesButton btn btn-left waves-effect waves-light exo" type="submit" name="action">Submit
+                    <i class="material-icons right">keyboard_arrow_right</i>
+                </button>
+
+            </div>
+    
+            <!--  Pupper Profile Page  -->
+            <div id="PupProfilePage" class="col s9 offset-s1">
+                <br>
+                <h5 class="exo">Pupper Profile:</h5>
+                <br>
+
+                <h7 class="exo" style="font-size: 15px; color: rgb(129, 129, 129);" >Please fill in the pupper profile so that we can customize the 
+                    Augmented reality experiences for your dog!</h7>
+                <br>
+                <br>
+
+                <div>
+                    <div class="row">
+                        <div class="pupname" style="margin-left: 20px; width: 60%;">
+                            <div class="col s12">
+                                <div class="row">
+                                    <div class="input-field col s12">
+                                        <i class="material-icons prefix">pets</i>
+                                        <input type="text" id="autocomplete-input" class="pupperName autocomplete exo">
+                                        <label class="exo" for="autocomplete-input">Pupper Name</label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <br>
+                    <!-- dog size form -->
+                    <form action="#">
+                        <p>
+                            <label>
+                            <input id="pupperLarge" name="group1" type="radio" value="Large" checked />
+                            <span class="exo">Large Dog (80-120lbs)</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input id="pupperMedium" name="group1" type="radio" value="Medium" />
+                            <span class="exo">Medium Dog (40-80 bs)</span>
+                            </label>
+                        </p>
+                        <p>
+                            <label>
+                            <input id="pupperSmall" name="group1" type="radio" value="Small" />
+                            <span class="exo">Small Dog (5-40lbs)</span>
+                            </label>
+                        </p>
+                    </form>
+    
+                    <br>
+                    <br>
+                    <button class="pupperButton btn btn-left waves-effect waves-light exo" type="submit" name="action">Submit
+                        <i class="material-icons right">keyboard_arrow_right</i>
+                    </button>
+                </div>
+            
+            </div>
+
+            <!--  Contact Page  -->    
+            <div id="ContactPage" class="col s12 offset-s1">
+                <br>
+                <h5 class="exo">Contact</h5>
+                <br>
+
+                <div class="col s12 m7">
+                    <div class="row">
+                        <form class="col s12">
+                            <div class="row">
+                                <div class="exo input-field col s6" style="margin-left: 20px;">
+                                    <input id="first_name" type="text" class="validate exo">
+                                    <label for="first_name">First Name</label>
+                                </div>
+                            <div class="input-field col s6" style="margin-left: 20px;">
+                                <input id="last_name" type="text" class="validate exo">
+                                <label class="exo" for="last_name">Last Name</label>
+                            </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6" style="margin-left: 20px;">
+                                    <input  id="email_contact" type="text" class="validate exo">
+                                    <label class="exo"  for="email_contact">Email</label>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="input-field col s6" style="margin-left: 20px;">
+                                    <input  id="note" type="text" class="validate exo">
+                                    <label class="exo"  for="note">Note</label>
+                                </div>
+                            </div>
+                            <button class="exo btn btn-left-twenty waves-effect waves-light" 
+                                style="margin-left: 10px;" type="submit" name="action">Submit
+                                <i class="material-icons right">keyboard_arrow_right</i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+            <div class="SignIn">
+                <div class="modal-content">
+
+                    <!-- buttons to toggle between -->
+                    <a class="signupbuttontopright-signup unselectable exo" style="float: right; font-size: 16px;">Sign Up</a>
+                    <a class="signupbuttontopright-signin unselectable exo" style="float: right; font-size: 16px;">Sign In</a>
+
+                    <h4 class="signtoggle exo" style="font-size: 30px;">Sign Up</h4>
+                    <div class="row">
+                            <div class="col s12 offset-l2">
+                                <input class="mdl-textfield__input exo" style="display:inline;width:auto;" 
+                                    type="text" id="email" name="email" placeholder="Email"/>
+                                &nbsp;&nbsp;&nbsp;
+                                <input class="mdl-textfield__input exo" style="display:inline;width:auto;" 
+                                    type="password" id="password" name="password" placeholder="Password"/>
+                                <br/><br/>
+        
+                            </div>
+                        </div>
+                        <!-- new inputs to be shot off to the realtime db.. -->
+                        <!-- <div class="signupdatainputs row">
+                            <div class="col s12 offset-l2">
+                                    <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" 
+                                        id="displayName" name="displayName" placeholder="Display Name"/>
+                                    &nbsp;&nbsp;&nbsp;
+                                    <input class="mdl-textfield__input" style="display:inline;width:auto;" type="text" 
+                                        id="company" name="company" placeholder="Company"/>
+                            </div>
+                        </div> -->
+                        <div class="row">
+                            <div class="col s12 offset-l2">
+                                <button  class="exo signinbuttonmain mdl-button mdl-js-button mdl-button--raised waves-effect 
+                                    btn-left waves-light btn blue-grey lighten-3" id="quickstart-sign-in" name="signin">Sign In</button>
+                                <button class="exo signupbuttonmain mdl-button mdl-js-button mdl-button--raised waves-effect btn-left 
+                                    waves-light btn blue-grey lighten-3" id="quickstart-sign-up" name="signup">Sign Up</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col s12 offset-l2">
+                                <button class=" exo mdl-button mdl-js-button mdl-button--raised waves-effect btn-left
+                                     waves-light btn blue-grey lighten-3" disabled id="quickstart-verify-email" 
+                                        name="verify-email">Send Email Verification</button>
+                                        <br><br>
+                                <button class=" exo mdl-button mdl-js-button mdl-button--raised waves-effect btn-left
+                                     waves-light btn blue-grey lighten-3" id="quickstart-password-reset" 
+                                        name="verify-email">Send Password Reset Email</button>
+
+                                        <!-- firebase user data -->
+                                <div class="firebaselogindata quickstart-user-details-container">
+                                    Firebase sign-in status: <span id="quickstart-sign-in-status">Unknown</span>
+                                    <div>Firebase auth <code>currentUser</code> object value:</div>
+                                    <pre><code id="quickstart-account-details">null</code></pre>
+                                </div>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+            </div>
+        </div>
+
+        <footer class="page-footer blue-grey lighten-4">
+            <div class="container">
+                <div class="row">
+                <div class="col l6 s12">
+                    <h6 class="white-text exo">AugDog Links</h6>
+                    <p class="grey-text text-lighten-4 exo">Some helpful links to help your dogmented experience!</p>
+                </div>
+                <div class="col l4 offset-l2 s12">
+                    <h6 class="white-text exo">Links</h6>
+                    <ul>
+                    <li><a class="grey-text text-lighten-3 exo" href="#!">Link 1</a></li>
+                    <li><a class="grey-text text-lighten-3 exo" href="#!">Link 2</a></li>
+                    <li><a class="grey-text text-lighten-3 exo" href="#!">Link 3</a></li>
+                    <li><a class="grey-text text-lighten-3 exo" href="#!">Link 4</a></li>
+                    </ul>
+                </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container exo">
+                © 2014 Copyright Text
+                <a class="grey-text text-lighten-4 right exo" href="#!">More Links</a>
+                </div>
+            </div>
+        </footer>
+        
+        <!-- <script src="./particles.js"></script>
+        <script src="./js/particlesAppConfig.js"></script> -->
+
+        <script src="https://player.vimeo.com/api/player.js"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-rc.2/js/materialize.min.js"></script>
+        <script src="./js/NavButtonClicks.js"></script>
+        <script src="./js/App.js"></script>
+        <script src="./js/login.js"></script>
+        <script src="./js/sendrecievedb.js"></script>
+    </body>
+</html>

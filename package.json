@@ -1,0 +1,19 @@
+{
+  "name": "assets",
+  "version": "1.0.0",
+  "engines": {
+    "node": "10.3.0"
+  },
+  "main": "./js/App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^5.8.2",
+    "heroku": "^7.21.0"
+  },
+  "devDependencies": {},
+  "description": ""
+}
