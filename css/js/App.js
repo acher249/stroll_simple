@@ -1,6 +1,5 @@
 // SideNav Slideout
 var user;
-
 $(document).ready(function(){
 
   user = firebase.auth().currentUser;

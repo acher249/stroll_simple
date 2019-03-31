@@ -2,22 +2,20 @@ $(document).ready(function(){
   
   // wait so that firebase has time to sign the user in..
   setTimeout(GetDataFromDB, 500); 
-  getLocation();
-
+  getLocationFirstTime();
 });
 
 var currentLat;
 var currentLong;
+var currentTime;
 
 $('.SendLocation').click(function() {
-
     SendCurrentLocationToDB();
-
 });
 
 var x = document.getElementById("demo");
 
-function getLocation() {
+function getLocationFirstTime() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(showPosition);
   } else { 
@@ -47,19 +45,31 @@ var SendCurrentLocationToDB = () => {
   var split = email.split("@");
   var userName = split[0];
 
-  var d = Date();
-  var currentTime = d.toString();
-  console.log(currentTime);
+  navigator.geolocation.getCurrentPosition(function(position) {
+    console.log('Geolocation permissions granted');
+    console.log('Latitude:' + position.coords.latitude);
+    console.log('Longitude:' + position.coords.longitude);
 
-  // if we need multiple doges.. need further hierarchy
-  // database.ref().child(user.uid + "/" + pupperName ).update({
-  database.ref().child(user.uid).update({
+    currentLat = position.coords.latitude;
+    currentLong = position.coords.longitude;
 
-    //SCHEMA
-    userName: userName,
-    email: email,
-    currentLat: currentLat,
-    currentLong: currentLong,
+    var d = Date();
+    var currentTime = d.toString();
+    console.log(currentTime);
+    console.log(currentLat);
+    console.log(currentLong);
+  
+    // if we need multiple doges.. need further hierarchy
+    // database.ref().child(user.uid + "/" + pupperName ).update({
+    database.ref().child(user.uid).update({
+  
+      //SCHEMA
+      userName: userName,
+      email: email,
+      currentTime: currentTime,
+      currentLat: currentLat,
+      currentLong: currentLong,
+    });
   });
 };
 
