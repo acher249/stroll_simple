@@ -20,10 +20,12 @@ app.use(bodyParser.json());
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 app.get('/', (req, res) => {
-res.render('contact');
+    res.render('contact');
+    // res.render('index');
 });
 
-app.post('/send', (req, res) => {
+// app.post('/send', (req, res) => {
+app.post('/send', () => {
     // this is input from the front end elements.
     // use bodyParser and req.body to grab the data of the input
     // we are still going to need to get his from a from on the front end
@@ -37,7 +39,9 @@ app.post('/send', (req, res) => {
     // </ul>
 
     // use this as destination..
-    userEmail = req.body.email;
+    // userEmail = req.body.email;
+
+    userEmail = "jchernick2010@gmail.com";
     // NotesAsString = req.body.message;
     NotesAsString = "TimeStamp = Tuesday@10:42pm \n Latitude: 123123424 \n Longitude: 23423424 \n Blob: Voice Recording"; // dummy data 
 
@@ -67,8 +71,8 @@ app.post('/send', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"Stroll" <StrollAppEmail@gmail.com>', // sender address
-        to: "jchernick2010@gmail.com",
-        // to: userEmail, // list of receivers .. Send to userEmail
+        // to: "jchernick2010@gmail.com",
+        to: userEmail, // list of receivers .. Send to userEmail
         subject: "Saved Stroll", // Subject line
         text: "Hello world?", // plain text body
         html: output // html body
@@ -84,7 +88,9 @@ app.post('/send', (req, res) => {
         console.log("Message sent: %s", info.messageId);
         console.log("Preview URL: %s", nodemailer.getTestMessageUrl(info));
 
-        res.render('contact', {msg: 'Email has been sent'});
+        // res.render('contact', {msg: 'Email has been sent'});
+        // res.render('index', {msg: 'Email has been sent'});
+        console.log("Email Has been sent...");
     });
 });
 
