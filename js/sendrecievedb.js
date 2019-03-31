@@ -2,26 +2,44 @@ $(document).ready(function(){
   
   // wait so that firebase has time to sign the user in..
   setTimeout(GetDataFromDB, 500); 
-  
+  getLocation();
+
 });
 
-// $('.pupperButton').click(function() {
-//   SendPupperToDB();
-// });
+var currentLat;
+var currentLong;
 
-// $('.dogmentedRealitiesButton').click(function() {
-//   SendDogmentedRealityFavoritesToDB();
-// });
+$('.SendLocation').click(function() {
 
+    SendCurrentLocationToDB();
 
-var SendPupperToDB = () => {
+});
+
+var x = document.getElementById("demo");
+
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(showPosition);
+  } else { 
+    x.innerHTML = "Geolocation is not supported by this browser.";
+  }
+}
+
+function showPosition(position) {
+  x.innerHTML = "Latitude: " + position.coords.latitude + 
+  "<br>Longitude: " + position.coords.longitude;
+
+  currentLat = position.coords.latitude;
+  currentLong = position.coords.longitude;
+
+  console.log(currentLat);
+  console.log(currentLong);
+}
+
+var SendCurrentLocationToDB = () => {
 
   user = firebase.auth().currentUser;
   var database = firebase.database();
-
-  var pupperName = $(".pupperName").val();
-
-  var pupperSize = $("input[type=radio][name=group1]:checked").val();
 
   var email = user.email;
 
@@ -29,10 +47,9 @@ var SendPupperToDB = () => {
   var split = email.split("@");
   var userName = split[0];
 
-  console.log(userName);
-  console.log(email);
-  console.log(pupperName);
-  console.log(pupperSize);
+  var d = Date();
+  var currentTime = d.toString();
+  console.log(currentTime);
 
   // if we need multiple doges.. need further hierarchy
   // database.ref().child(user.uid + "/" + pupperName ).update({
@@ -41,33 +58,13 @@ var SendPupperToDB = () => {
     //SCHEMA
     userName: userName,
     email: email,
-    pupperName: pupperName,
-    pupperSize: pupperSize
-
+    currentLat: currentLat,
+    currentLong: currentLong,
   });
 };
-
-var SendDogmentedRealityFavoritesToDB = () => {
-
-  user = firebase.auth().currentUser;
-  var database = firebase.database();
-
-  var DogmentWhales = $('.DogmentWhales').prop('checked');
-  var DogmentZombies = $('.DogmentZombies').prop('checked');
-
-  // database.ref().child(user.uid + "/" + pupperName ).update({
-  database.ref().child(user.uid + "/DogmentedRealities").update({
-
-    //SCHEMA
-    DogmentWhales: DogmentWhales,
-    DogmentZombies: DogmentZombies
-
-  });
-};
-
 
 var GetDataFromDB = () => {
-  console.log("ran GetPuppersFromDB()");
+  console.log("ran GetDataFromDB()");
 
   user = firebase.auth().currentUser;
   var database = firebase.database();
@@ -85,40 +82,15 @@ var GetDataFromDB = () => {
       var email = snapshot.child("email").val();
 
       // get main pupper information
-      var pupperName = snapshot.child("pupperName").val();
-      var pupperSize = snapshot.child("pupperSize").val();
-
-      // get dogmented reality favorites from db
-      var DogmentWhales = snapshot.child("/DogmentedRealities/DogmentWhales").val();
-      var DogmentZombies = snapshot.child("/DogmentedRealities/DogmentZombies").val();
+      var currentLat = snapshot.child("currentLat").val();
+      var currentLong = snapshot.child("currentLong").val();
 
       console.log("userName from db: " + userName);
       console.log("email from db: " + email);
-      console.log("pupperName from db: " + pupperName);
-      console.log("pupperSize from db: " + pupperSize);
-
-      console.log("DogmentWhales from db: " + DogmentWhales);
-      console.log("DogmentZombies from db: " + DogmentZombies);
+      console.log("currentLat from db: " + currentLat);
+      console.log("currentLong from db: " + currentLong);
 
       // now do things with the data..
-      // turn off the inputs to the pupper profile and display the pupper data from db..
-
-      // turn this into a utility function..
-      // Set the dogmented reality favorite checkboxes from the database data..
-      if(DogmentWhales != null){
-        if(DogmentWhales == true){
-          $('.DogmentWhales').prop('checked', true);
-        }else if (DogmentWhales == false){
-          $('.DogmentWhales').prop('checked', false);
-        }
-      }
-      if(DogmentZombies != null){
-        if(DogmentZombies == true){
-          $('.DogmentZombies').prop('checked', true);
-        }else if (DogmentZombies == false){
-          $('.DogmentZombies').prop('checked', false);
-        }
-      }
 
     });
   }
