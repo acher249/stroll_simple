@@ -6,6 +6,8 @@ const nodemailer = require('nodemailer');
 
 const app = express();
 
+var userEmail;
+
 // view engine setup
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
@@ -22,17 +24,26 @@ res.render('contact');
 });
 
 app.post('/send', (req, res) => {
+    // this is input from the front end elements.
+    // use bodyParser and req.body to grab the data of the input
+    // we are still going to need to get his from a from on the front end
+
+    // Taken from output..
+    // <ul>
+    //     <li>Name: ${req.body.name}</li>
+    //     <li>Company: ${req.body.company}</li>
+    //     <li>Email: ${req.body.email}</li>
+    //     <li>Phone: ${req.body.phone}</li>
+    // </ul>
+
+    // use this as destination..
+    userEmail = req.body.email;
+    // NotesAsString = req.body.message;
+    NotesAsString = "TimeStamp = Tuesday@10:42pm \n Latitude: 123123424 \n Longitude: 23423424 \n Blob: Voice Recording"; // dummy data 
+
     const output = `
-        <p>You have a new contact request</p>
-        <h3>Contact Details</h3>
-        <ul>
-            <li>Name: ${req.body.name}</li>
-            <li>Company: ${req.body.company}</li>
-            <li>Email: ${req.body.email}</li>
-            <li>Phone: ${req.body.phone}</li>
-        </ul>
-        <h3>Message</h3>
-        <p>${req.body.message}</p>
+        <h3>Stroll Notes</h3>
+        <p>${NotesAsString}</p>
     `;
 
     // Generate test SMTP service account from ethereal.email
@@ -56,8 +67,9 @@ app.post('/send', (req, res) => {
     // setup email data with unicode symbols
     let mailOptions = {
         from: '"Stroll" <StrollAppEmail@gmail.com>', // sender address
-        to: "jchernick2010@gmail.com", // list of receivers
-        subject: "Hello ✔", // Subject line
+        to: "jchernick2010@gmail.com",
+        // to: userEmail, // list of receivers .. Send to userEmail
+        subject: "Saved Stroll", // Subject line
         text: "Hello world?", // plain text body
         html: output // html body
     };
