@@ -43,7 +43,7 @@ app.post('/send', () => {
 
     userEmail = "jchernick2010@gmail.com";
     // NotesAsString = req.body.message;
-    NotesAsString = "TimeStamp = Tuesday@10:42pm \n Latitude: 123123424 \n Longitude: 23423424 \n Blob: Voice Recording"; // dummy data 
+    var NotesAsString = "TimeStamp = Tuesday@10:42pm \n Latitude: 123123424 \n Longitude: 23423424 \n Blob: Voice Recording"; // dummy data 
 
     const output = `
         <h3>Stroll Notes</h3>
