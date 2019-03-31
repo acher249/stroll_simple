@@ -19,23 +19,17 @@ $(document).ready(function(){
 function StartAppPageSetup(){
   $('#AboutPage').addClass('show');
 
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').addClass('hide');
-
 
   // setting button active colors
 
   $('#AboutButton').addClass('activetext');
   $('#AboutButtonTwo').addClass('activetexttwo');
 
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').addClass('inactivetext');
   $('#ContactButtonTwo').addClass('inactivetext');
@@ -50,11 +44,8 @@ $('#AboutButton').click(function() {
   $('#AboutPage').removeClass('hide');
   $('#AboutPage').addClass('show');
 
-  $('#DogmentPage').removeClass('show');
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').removeClass('show');
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').removeClass('show');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').removeClass('show');
   $('#ContactPage').addClass('hide');
@@ -67,15 +58,10 @@ $('#AboutButton').click(function() {
   $('#AboutButton').addClass('activetext');
   $('#AboutButtonTwo').addClass('activetexttwo');
 
-  $('#DogmentButton').removeClass('activetext');
-  $('#DogmentButtonTwo').removeClass('activetexttwo');
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').removeClass('activetext');
-  $('#PupProfileButtonTwo').removeClass('activetexttwo');
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
+  $('#MapButton').removeClass('activetext');
+  $('#MapButtonTwo').removeClass('activetexttwo');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').removeClass('activetext');
   $('#ContactButtonTwo').removeClass('activetexttwo');
@@ -89,11 +75,8 @@ $('#AboutButtonTwo').click(function() {
   $('#AboutPage').removeClass('hide');
   $('#AboutPage').addClass('show');
 
-  $('#DogmentPage').removeClass('show');
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').removeClass('show');
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').removeClass('show');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').removeClass('show');
   $('#ContactPage').addClass('hide');
@@ -106,15 +89,10 @@ $('#AboutButtonTwo').click(function() {
   $('#AboutButton').addClass('activetext');
   $('#AboutButtonTwo').addClass('activetexttwo');
 
-  $('#DogmentButton').removeClass('activetext');
-  $('#DogmentButtonTwo').removeClass('activetexttwo');
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').removeClass('activetext');
-  $('#PupProfileButtonTwo').removeClass('activetexttwo');
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
+  $('#MapButton').removeClass('activetext');
+  $('#MapButtonTwo').removeClass('activetexttwo');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').removeClass('activetext');
   $('#ContactButtonTwo').removeClass('activetexttwo');
@@ -125,16 +103,13 @@ $('#AboutButtonTwo').click(function() {
 
 // DOGMENT BUTTONS (both in nav and slide out)
 
-$('#DogmentButton').click(function() {
+$('#MapButton').click(function() {
 
   $('#AboutPage').removeClass('show');
   $('#AboutPage').addClass('hide');
 
-  $('#DogmentPage').removeClass('hide');
-  $('#DogmentPage').addClass('show');
-
-  $('#PupProfilePage').removeClass('show');
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').removeClass('hide');
+  $('#MapPage').addClass('show');
 
   $('#ContactPage').removeClass('show');
   $('#ContactPage').addClass('hide');
@@ -142,20 +117,15 @@ $('#DogmentButton').click(function() {
   // -------------------------------------
   // changing button color
 
-  $('#DogmentButton').removeClass('inactivetext');
-  $('#DogmentButtonTwo').removeClass('inactivetext');
-  $('#DogmentButton').addClass('activetext');
-  $('#DogmentButtonTwo').addClass('activetexttwo');
+  $('#MapButton').removeClass('inactivetext');
+  $('#MapButtonTwo').removeClass('inactivetext');
+  $('#MapButton').addClass('activetext');
+  $('#MapButtonTwo').addClass('activetexttwo');
 
   $('#AboutButton').removeClass('activetext');
   $('#AboutButtonTwo').removeClass('activetexttwo');
   $('#AboutButton').addClass('inactivetext');
   $('#AboutButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').removeClass('activetext');
-  $('#PupProfileButtonTwo').removeClass('activetexttwo');
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').removeClass('activetext');
   $('#ContactButtonTwo').removeClass('activetexttwo');
@@ -164,16 +134,13 @@ $('#DogmentButton').click(function() {
 
 });
 
-$('#DogmentButtonTwo').click(function() {
+$('#MapButtonTwo').click(function() {
 
   $('#AboutPage').removeClass('show');
   $('#AboutPage').addClass('hide');
 
-  $('#DogmentPage').removeClass('hide');
-  $('#DogmentPage').addClass('show');
-
-  $('#PupProfilePage').removeClass('show');
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').removeClass('hide');
+  $('#MapPage').addClass('show');
 
   $('#ContactPage').removeClass('show');
   $('#ContactPage').addClass('hide');
@@ -181,20 +148,15 @@ $('#DogmentButtonTwo').click(function() {
   // -------------------------------------
   // changing button color
 
-  $('#DogmentButton').removeClass('inactivetext');
-  $('#DogmentButtonTwo').removeClass('inactivetext');
-  $('#DogmentButton').addClass('activetext');
-  $('#DogmentButtonTwo').addClass('activetexttwo');
+  $('#MapButton').removeClass('inactivetext');
+  $('#MapButtonTwo').removeClass('inactivetext');
+  $('#MapButton').addClass('activetext');
+  $('#MapButtonTwo').addClass('activetexttwo');
 
   $('#AboutButton').removeClass('activetext');
   $('#AboutButtonTwo').removeClass('activetexttwo');
   $('#AboutButton').addClass('inactivetext');
   $('#AboutButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').removeClass('activetext');
-  $('#PupProfileButtonTwo').removeClass('activetexttwo');
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').removeClass('activetext');
   $('#ContactButtonTwo').removeClass('activetexttwo');
@@ -210,11 +172,8 @@ $('#PupProfileButton').click(function() {
   $('#AboutPage').removeClass('show');
   $('#AboutPage').addClass('hide');
 
-  $('#DogmentPage').removeClass('show');
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').removeClass('hide');
-  $('#PupProfilePage').addClass('show');
+  $('#MapPage').removeClass('show');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').removeClass('show');
   $('#ContactPage').addClass('hide');
@@ -222,20 +181,15 @@ $('#PupProfileButton').click(function() {
   // -------------------------------------
   // changing button color
 
-  $('#PupProfileButton').removeClass('inactivetext');
-  $('#PupProfileButtonTwo').removeClass('inactivetext');
-  $('#PupProfileButton').addClass('activetext');
-  $('#PupProfileButtonTwo').addClass('activetexttwo');
-
   $('#AboutButton').removeClass('activetext');
   $('#AboutButtonTwo').removeClass('activetexttwo');
   $('#AboutButton').addClass('inactivetext');
   $('#AboutButtonTwo').addClass('inactivetext');
 
-  $('#DogmentButton').removeClass('activetext');
-  $('#DogmentButtonTwo').removeClass('activetexttwo');
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
+  $('#MapButton').removeClass('activetext');
+  $('#MapButtonTwo').removeClass('activetexttwo');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').removeClass('activetext');
   $('#ContactButtonTwo').removeClass('activetexttwo');
@@ -249,11 +203,8 @@ $('#PupProfileButtonTwo').click(function() {
   $('#AboutPage').removeClass('show');
   $('#AboutPage').addClass('hide');
 
-  $('#DogmentPage').removeClass('show');
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').removeClass('hide');
-  $('#PupProfilePage').addClass('show');
+  $('#MapPage').removeClass('show');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').removeClass('show');
   $('#ContactPage').addClass('hide');
@@ -261,20 +212,15 @@ $('#PupProfileButtonTwo').click(function() {
   // -------------------------------------
   // changing button color
 
-  $('#PupProfileButton').removeClass('inactivetext');
-  $('#PupProfileButtonTwo').removeClass('inactivetext');
-  $('#PupProfileButton').addClass('activetext');
-  $('#PupProfileButtonTwo').addClass('activetexttwo');
-
   $('#AboutButton').removeClass('activetext');
   $('#AboutButtonTwo').removeClass('activetexttwo');
   $('#AboutButton').addClass('inactivetext');
   $('#AboutButtonTwo').addClass('inactivetext');
 
-  $('#DogmentButton').removeClass('activetext');
-  $('#DogmentButtonTwo').removeClass('activetexttwo');
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
+  $('#MapButton').removeClass('activetext');
+  $('#MapButtonTwo').removeClass('activetexttwo');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
   $('#ContactButton').removeClass('activetext');
   $('#ContactButtonTwo').removeClass('activetexttwo');
@@ -290,11 +236,8 @@ $('#ContactButton').click(function() {
   $('#AboutPage').removeClass('show');
   $('#AboutPage').addClass('hide');
 
-  $('#DogmentPage').removeClass('show');
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').removeClass('show');
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').removeClass('show');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').removeClass('hide');
   $('#ContactPage').addClass('show');
@@ -312,15 +255,10 @@ $('#ContactButton').click(function() {
   $('#AboutButton').addClass('inactivetext');
   $('#AboutButtonTwo').addClass('inactivetext');
 
-  $('#DogmentButton').removeClass('activetext');
-  $('#DogmentButtonTwo').removeClass('activetexttwo');
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').removeClass('activetext');
-  $('#PupProfileButtonTwo').removeClass('activetexttwo');
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
+  $('#MapButton').removeClass('activetext');
+  $('#MapButtonTwo').removeClass('activetexttwo');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
 });
 
@@ -329,11 +267,8 @@ $('#ContactButtonTwo').click(function() {
   $('#AboutPage').removeClass('show');
   $('#AboutPage').addClass('hide');
 
-  $('#DogmentPage').removeClass('show');
-  $('#DogmentPage').addClass('hide');
-
-  $('#PupProfilePage').removeClass('show');
-  $('#PupProfilePage').addClass('hide');
+  $('#MapPage').removeClass('show');
+  $('#MapPage').addClass('hide');
 
   $('#ContactPage').removeClass('hide');
   $('#ContactPage').addClass('show');
@@ -351,14 +286,9 @@ $('#ContactButtonTwo').click(function() {
   $('#AboutButton').addClass('inactivetext');
   $('#AboutButtonTwo').addClass('inactivetext');
 
-  $('#DogmentButton').removeClass('activetext');
-  $('#DogmentButtonTwo').removeClass('activetexttwo');
-  $('#DogmentButton').addClass('inactivetext');
-  $('#DogmentButtonTwo').addClass('inactivetext');
-
-  $('#PupProfileButton').removeClass('activetext');
-  $('#PupProfileButtonTwo').removeClass('activetexttwo');
-  $('#PupProfileButton').addClass('inactivetext');
-  $('#PupProfileButtonTwo').addClass('inactivetext');
+  $('#MapButton').removeClass('activetext');
+  $('#MapButtonTwo').removeClass('activetexttwo');
+  $('#MapButton').addClass('inactivetext');
+  $('#MapButtonTwo').addClass('inactivetext');
 
 });

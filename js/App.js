@@ -28,18 +28,11 @@ $(document).ready(function(){
 
 StartWithTabsOff = () => {
 
-  $('#DogmentButton').removeClass('show');
-  $('#DogmentButton').addClass('hide');
+  $('#MapButton').removeClass('show');
+  $('#MapButton').addClass('hide');
 
-  $('#PupProfileButton').removeClass('show');
-  $('#PupProfileButton').addClass('hide');
-
-  $('#DogmentButtonTwo').removeClass('show');
-  $('#DogmentButtonTwo').addClass('hide');
-
-  $('#PupProfileButtonTwo').removeClass('show');
-  $('#PupProfileButtonTwo').addClass('hide');
-
+  $('#MapButtonTwo').removeClass('show');
+  $('#MapButtonTwo').addClass('hide');
 };
 
   // clicking sign up top right button

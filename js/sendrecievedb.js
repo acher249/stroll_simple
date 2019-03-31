@@ -5,13 +5,13 @@ $(document).ready(function(){
   
 });
 
-$('.pupperButton').click(function() {
-  SendPupperToDB();
-});
+// $('.pupperButton').click(function() {
+//   SendPupperToDB();
+// });
 
-$('.dogmentedRealitiesButton').click(function() {
-  SendDogmentedRealityFavoritesToDB();
-});
+// $('.dogmentedRealitiesButton').click(function() {
+//   SendDogmentedRealityFavoritesToDB();
+// });
 
 
 var SendPupperToDB = () => {

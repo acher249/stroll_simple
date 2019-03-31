@@ -101,32 +101,20 @@ TurnOnNavSignInButtonWhenSignedOut = () => {
 
 TurnTabsOnWhenSignedIn = () => {
 
-  $('#DogmentButton').removeClass('hide');
-  $('#DogmentButton').addClass('show');
+  $('#MapButton').removeClass('hide');
+  $('#MapButton').addClass('show');
 
-  $('#PupProfileButton').removeClass('hide');
-  $('#PupProfileButton').addClass('show');
-
-  $('#DogmentButtonTwo').removeClass('hide');
-  $('#DogmentButtonTwo').addClass('show');
-
-  $('#PupProfileButtonTwo').removeClass('hide');
-  $('#PupProfileButtonTwo').addClass('show');
+  $('#MapButtonTwo').removeClass('hide');
+  $('#MapButtonTwo').addClass('show');
 }
 
 TurnTabsOffWhenSignedOut = () => {
 
-  $('#DogmentButton').removeClass('show');
-  $('#DogmentButton').addClass('hide');
+  $('#MapButton').removeClass('show');
+  $('#MapButton').addClass('hide');
 
-  $('#PupProfileButton').removeClass('show');
-  $('#PupProfileButton').addClass('hide');
-
-  $('#DogmentButtonTwo').removeClass('show');
-  $('#DogmentButtonTwo').addClass('hide');
-
-  $('#PupProfileButtonTwo').removeClass('show');
-  $('#PupProfileButtonTwo').addClass('hide');
+  $('#MapButtonTwo').removeClass('show');
+  $('#MapButtonTwo').addClass('hide');
 }
 
 
@@ -219,7 +207,7 @@ function toggleSignIn() {
 
   function ThanksForSigningUp() {    
     swal({
-        title: "Welcome to AugDog",
+        title: "Welcome to Stroll",
         icon: "success",
         text: "Thanks for creating your account, now have fun!",
         button: "Enter", 
@@ -273,11 +261,8 @@ function toggleSignIn() {
     $('#AboutPage').removeClass('hide');
     $('#AboutPage').addClass('show');
   
-    $('#DogmentPage').removeClass('show');
-    $('#DogmentPage').addClass('hide');
-  
-    $('#PupProfilePage').removeClass('show');
-    $('#PupProfilePage').addClass('hide');
+    $('#MapPage').removeClass('show');
+    $('#MapPage').addClass('hide');
   
     $('#ContactPage').removeClass('show');
     $('#ContactPage').addClass('hide');
@@ -290,15 +275,10 @@ function toggleSignIn() {
     $('#AboutButton').addClass('activetext');
     $('#AboutButtonTwo').addClass('activetexttwo');
   
-    $('#DogmentButton').removeClass('activetext');
-    $('#DogmentButtonTwo').removeClass('activetexttwo');
-    $('#DogmentButton').addClass('inactivetext');
-    $('#DogmentButtonTwo').addClass('inactivetext');
-  
-    $('#PupProfileButton').removeClass('activetext');
-    $('#PupProfileButtonTwo').removeClass('activetexttwo');
-    $('#PupProfileButton').addClass('inactivetext');
-    $('#PupProfileButtonTwo').addClass('inactivetext');
+    $('#MapButton').removeClass('activetext');
+    $('#MapButtonTwo').removeClass('activetexttwo');
+    $('#MapButton').addClass('inactivetext');
+    $('#MapButtonTwo').addClass('inactivetext');
   
     $('#ContactButton').removeClass('activetext');
     $('#ContactButtonTwo').removeClass('activetexttwo');
